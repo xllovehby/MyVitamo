@@ -1,11 +1,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <io.vov.vitamio.widget.VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/surface_view"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <FrameLayout android:id="@+id/operation_volume_brightness"
+        android:visibility="invisible" android:layout_centerInParent="true"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:background="#00000000" android:orientation="horizontal"
+        android:padding="0dip">
+    <ImageView android:id="@+id/operation_bg"
+        android:layout_gravity="center" android:src="@drawable/video_volumn_bg"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <FrameLayout android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:paddingBottom="25dip">
+        <ImageView android:id="@+id/operation_full"
+            android:layout_gravity="left" android:src="@drawable/video_num_bg"
+            android:layout_width="94dip" android:layout_height="wrap_content" />
+        <ImageView android:id="@+id/operation_percent"
+            android:layout_gravity="left" android:src="@drawable/video_num_front"
+            android:layout_width="0dip" android:layout_height="wrap_content"
+            android:scaleType="matrix" />
+    </FrameLayout>
+    </FrameLayout>
 </RelativeLayout>
